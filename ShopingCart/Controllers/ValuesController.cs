@@ -14,7 +14,7 @@ namespace ShopingCart.Controllers
     {
 
         private readonly IUserRepo _UserRepo;
-
+        public static List<User> lstUser = new List<User>();
         public ValuesController(IUserRepo UserRepo)
         {
             _UserRepo = UserRepo;
@@ -33,8 +33,7 @@ namespace ShopingCart.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] User user)
         {
-            var u = new List<User>();
-            u.Add(user);
+            _UserRepo.SaveCustomerOrderDetails(user);
             return Ok();
         }
        

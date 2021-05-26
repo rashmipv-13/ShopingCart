@@ -8,9 +8,11 @@ namespace ShopingCart
 {
     public class UserDataStore
     {
+        public List<User> lstUser;
+
         public List<User> getUser()
         {
-            var lstUser = new List<User>()
+            lstUser = new List<User>()
             {
             new User()
             {

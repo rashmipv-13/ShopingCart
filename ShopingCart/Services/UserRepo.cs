@@ -10,10 +10,14 @@ namespace ShopingCart.Services
     {
         public IEnumerable<User> GetCustomerOrderDetails(int CustID)
         {
-            UserDataStore db = new UserDataStore();
-            var userOrderDetails = db.getUser().Where(x => x.Id == CustID);
+            var userOrderDetails = UserMemorymanagement.GetUser(CustID);
             return userOrderDetails;
 
+        }
+
+        public void SaveCustomerOrderDetails(User user)
+        {
+            UserMemorymanagement.AddUser(user);
         }
     }
 }

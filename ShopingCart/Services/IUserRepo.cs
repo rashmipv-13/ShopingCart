@@ -9,5 +9,6 @@ namespace ShopingCart.Services
    public interface IUserRepo
     {
         IEnumerable<User> GetCustomerOrderDetails(int CustID);
+        void SaveCustomerOrderDetails(User user);
     }
 }
